@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-        $schedule->command('coupomated:fetch --force')->daily();
+        $schedule->command('coupomated:fetch')->hourly();
     }
 
     /**
