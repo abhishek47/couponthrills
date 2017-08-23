@@ -1,0 +1,103 @@
+.inline-block {
+	display: inline-block;
+}
+
+/* main-section */
+
+#category-edit, #store-edit {
+	display: none;
+}
+
+.main-section {
+	padding: 50px 0;
+}
+
+.side-navbar {
+	box-shadow: 1px 1px 10px 1px #cccccc;
+}
+
+.side-navbar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.side-navbar ul li {
+	list-style: none;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.side-navbar ul li a {
+    display: inline-block;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 0 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.side-navbar ul li a:hover, .side-navbar ul li a.active {
+	background: #FFDD00;
+}
+
+.card-row {
+	margin: 0 0 30px;
+}
+
+.card-outer {
+	box-shadow: 1px 1px 10px 1px #cccccc;
+	padding: 20px 0;
+}
+
+.card-outer .count, .card-outer .text-content {
+	font-size: 20px;
+}
+
+.latest-user-outer {
+	padding: 10px 20px;
+}
+
+.user-outer h3, .categories-outer h3 {
+	font-size: 22px;
+	font-weight: 500;
+	margin: 0 0 20px;
+	border-bottom: 1px solid #777777;
+	padding: 0 0 15px;
+}
+
+footer {
+	padding-top: 0;
+	background: none;
+}
+
+.social_icons li a i {
+    font-size: 18px;
+    margin: 10px 0;
+}    
+
+.btn-danger {
+	background: #f00;
+}
+
+.categories-outer, .user-outer {
+	position: relative;
+}
+
+.categories-outer .btn, .user-outer .btn {
+	padding: 4px 5px;
+	margin-top: 0;
+	min-width: 70px;
+	border-radius: 16px;
+}
+
+.add-category {
+	position: absolute;
+	top: 0px;
+	right: 0;
+	padding-left: 10px!important;
+	padding-right: 10px!important; 
+}
+
+.description-text {
+	height: 104px!important;
+}
