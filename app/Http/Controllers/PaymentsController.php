@@ -40,8 +40,8 @@ class PaymentsController extends Controller
         if($response->success){
         
         $tokens = $response->payment_request->amount / 2;
-        \Auth::user()->profile->tokens += $tokens;
-        \Auth::user()->profile->save();
+        \Auth::user()->tokens += $tokens;
+        \Auth::user()->save();
          
         $payment = $response->payment_request;
         \Auth::user()->payments()->create(['payment_id' => $payment->id, 'amount' => $payment->amount]);

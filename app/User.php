@@ -2,7 +2,7 @@
 
 namespace App;
 
-
+use App\Models\Payment;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,6 +28,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 
 
     public function generateToken()
