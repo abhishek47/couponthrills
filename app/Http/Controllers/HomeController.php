@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $page = 'profile';
+        return view('home', compact('page'));
     }
 
     /**
@@ -34,8 +35,9 @@ class HomeController extends Controller
      */
     public function coupons()
     {
+        $page = 'mycoupons';
         $coupons = auth()->user()->coupons;
-        return view('profile.coupons', compact('coupons'));
+        return view('profile.coupons', compact('coupons', 'page'));
     }
 
     /**
