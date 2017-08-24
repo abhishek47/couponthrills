@@ -46,6 +46,18 @@ class FetchCouponsData extends Command
         foreach($coupons as $coupon)
         {
             if(!Coupon::where('cid', $coupon->CM_CID)->exists()) {
+                preg_match_all('!\d+!', $coupon->DISCOUNT, $matches);
+                
+                $tokens = 5; 
+                
+                if(isset($matches[0][0])) { 
+                if($matches[0][0] <= 20) { $tokens = 10; }
+
+                if($matches[0][0] < 50 && $matches[0][0] > 20) { $tokens = 15; }
+
+                if($matches[0][0] >= 50) { $tokens = 20; } 
+                } 
+                
                 Coupon::create([
                         'cid' => $coupon->CM_CID,
                         'title' => $coupon->TITLE,
@@ -55,6 +67,7 @@ class FetchCouponsData extends Command
                         'link' => $coupon->LINK,
                         'validity' => $coupon->VALIDITY_DATE,
                         'discount' => $coupon->DISCOUNT,
+                        'tokens' => $tokens,
                         'categories' => $coupon->CATS_TEXT,
                         'store_name' => $coupon->STORE_NAME
                     ]);

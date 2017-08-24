@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,13 +32,24 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function coupons()
+    {
+        $coupons = auth()->user()->coupons;
+        return view('profile.coupons', compact('coupons'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request)
     {   
         $this->validate($request, [
                            'name' => 'required',
                            'email' => 'email|required|unique:users'
                            ]);
- 
+
         auth()->user()->update($request->all());
 
         flash('Profile Details Saved!')->success();

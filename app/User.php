@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\User;
+use App\Models\Coupon;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Notifications\Notifiable;
@@ -28,7 +30,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    
+    public function coupons()
+    {
+        return $this->belongsToMany(Coupon::class, 'coupon_user');
+    }
 
     public function payments()
     {

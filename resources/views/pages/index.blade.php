@@ -219,6 +219,39 @@
   </section>
 
 
+@if(request()->session()->has('coupon_redeemed'))
+		<div class="modal fade" id="redeem" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		       <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">{{ session('coupon_redeemed')->title }}</h4>
+		      </div>
+		      <div class="modal-body">
+		         <h5><b>{{ session('coupon_redeemed')->tokens }}</b> tokens redeemed.You have <b>{{ auth()->user()->tokens }}</b> tokens left.</h5>
+		         <b>Coupon Code :</b> 
+		         @if(!empty(session('coupon_redeemed')->code )) 
+		         <input type="text" class="form-control" value="{{ session('coupon_redeemed')->code }}" name="" readonly="">
+		         @else
+		         <input type="text" class="form-control" value="Click on Use Offer!" name="" readonly="">
+		         @endif
+		         <small class="text-muted">This offer has been saved to your account!You can either use this coupon now or later uptil the expiration!</small>
+
+		         <hr>
+		         <b>Store : </b> {{ session('coupon_redeemed')->store_name }}
+		         <b>Expires : </b> {{ session('coupon_redeemed')->validity }} 
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+		         <a type="button" target="_blank" href="{{ session('coupon_redeemed')->link }}" class="btn btn-primary" style="background-color: #002b5e;color: #fff;">Use Offer</a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	@endif	
+
+
 
   @foreach($coupons as $coupon)
 
@@ -240,12 +273,25 @@
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-		        <button type="button" class="btn btn-primary" style="background-color: #002b5e;color: #fff;">Redeem Tokens</button>
+		       <a type="button" href="/coupons/{{$coupon->id}}/redeem/" class="btn btn-primary" style="background-color: #002b5e;color: #fff;">Redeem <b>{{ $coupon->tokens }}</b> Tokens &amp; Get Code</a>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 
 @endforeach		
+
+@endsection
+
+
+@section('js')
+
+	@if(request()->session()->has('coupon_redeemed'))
+	 <script type="text/javascript">
+		$('#redeem').modal()
+	 </script>
+	@endif 
+
+
 
 @endsection

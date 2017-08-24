@@ -5,10 +5,10 @@
   <section class="sub-banner">
     <div class="overlay">
       <div class="container">
-        <h2>{{ auth()->user()->name }}</h2>
+        <h2>My Coupons</h2>
         <ul class="sub-nav">
           <li><a href="#."><i class="fa fa-home"></i></a> / </li>
-          <li><a href="#.">Profile</a></li>
+          <li><a href="#.">My Coupons</a></li>
         </ul>
       </div>
     </div>
@@ -19,7 +19,7 @@
    @include('flash::message')
     <div class="row">
          <div class="col-md-3">
-            @include('partials.profile_nav')
+             @include('partials.profile_nav')
          </div>
         <div class="col-md-9">
 
@@ -39,46 +39,59 @@
                 </div>
             </div>
 
-            <form method="POST" action="/profile">
-              @if($errors->has('name') || $errors->has('email'))
-                @include('partials.errors')
-              @endif
-              {{ csrf_field() }}
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Fullname" value="{{ auth()->user()->name }}">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" placeholder="Email">
-              </div>
-              <button type="submit" class="btn btn-default">Update Info</button>
-            </form>
-
-            <hr>
-            <h3>Change Password</h3>
-
-             <form method="POST" action="/profile/password">
-             @if($errors->has('old_password') || $errors->has('password'))
-              @include('partials.errors')
-             @endif
-              {{ csrf_field() }}
-              <div class="form-group">
-                <label for="old_password">Old Password</label>
-                <input type="password" class="form-control" name="old_password" id="old_password" placeholder="Your Current Password" ">
+            @foreach($coupons as $coupon)
+              <!--======= COUPON 1 =========-->
+              <div class="offer-in"> <!-- <img class="img-responsive" src="/images/t-img-1.jpg" alt="" > -->
+                <h2 style="color: green;">{{ $coupon->store_name }}</h2>
+                <div class="offer-top-in">
+                  <h6>{{ substr($coupon->title, 0, 50)  }}...</h6>
+                  <p class="text-uppercase">Expires: {{ $coupon->validity }} </p>
+                  <div class="btm-offer">
+                    <p class="text-uppercase"> + up to <span>{{ $coupon->discount }}</span></p>
+                  </div>
+                </div>
+                
+                <!--======= COUPON HOVER =========-->
+                <div class="off-over">
+                  <h6>{{ substr($coupon->title, 0, 50)  }}...</h6>
+                  <p class="text-uppercase">Expires: {{ $coupon->validity }} </p>
+                  <a href="" data-toggle="modal" data-target="#redeem-{{$coupon->id}}" class="btn">View Coupon Code</a>
+                  <div class="btm-offer">
+                    <p class="text-uppercase"> + up to <span>{{ $coupon->discount }}</span> </p>
+                  </div>
+                </div>
               </div>
 
-              <div class="form-group">
-                <label for="password">New Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="New Password">
-              </div>
+              <div class="modal fade" id="redeem-{{$coupon->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">{{ $coupon->title }}</h4>
+                    </div>
+                    <div class="modal-body">
+                      
+                       <b>Coupon Code :</b> 
+                       @if(!empty($coupon->code )) 
+                       <input type="text" class="form-control" value="{{ $coupon->code }}" name="" readonly="">
+                       @else
+                       <input type="text" class="form-control" value="Click on Use Offer!" name="" readonly="">
+                       @endif
 
-              <div class="form-group">
-                <label for="password">Confirm New Password</label>
-                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="New Password">
+                       <hr>
+                       <b>Store : </b> {{ $coupon->store_name }}
+                       <b>Expires : </b> {{ $coupon->validity }} 
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+                       <a type="button" target="_blank" href="{{ $coupon->link }}" class="btn btn-primary" style="background-color: #002b5e;color: #fff;">Use Offer</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button type="submit" class="btn btn-default">Update Password</button>
-            </form>
+            @endforeach  
+            
         </div>
     </div>
 </div>

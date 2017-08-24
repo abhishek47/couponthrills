@@ -44,6 +44,8 @@ class CouponsController extends Controller
         auth()->user()->tokens = auth()->user()->tokens - $coupon->tokens;
         auth()->user()->save(); 
 
+        auth()->user()->coupons()->attach($coupon);
+
         session()->flash('coupon_redeemed' , $coupon);
 
     } else {

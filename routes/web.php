@@ -19,6 +19,7 @@ Route::get('contact', 'PagesController@contact');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/coupons', 'HomeController@coupons')->name('user.coupons');
 
 Route::post('/profile', 'HomeController@update')->name('profile.update');
 Route::post('/profile/password', 'HomeController@updatePassword')->name('profile.password');
