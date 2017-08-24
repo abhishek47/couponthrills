@@ -33,6 +33,11 @@ class HomeController extends Controller
      */
     public function update(Request $request)
     {   
+        $this->validate($request, [
+                           'name' => 'required',
+                           'email' => 'email|required|unique:users'
+                           ]);
+ 
         auth()->user()->update($request->all());
 
         flash('Profile Details Saved!')->success();
