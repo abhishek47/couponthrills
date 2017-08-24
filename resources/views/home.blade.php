@@ -43,6 +43,7 @@
             </div>
 
             <form method="POST" action="/profile">
+              @include('partials.errors')
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="name">Name</label>
@@ -59,6 +60,7 @@
             <h3>Change Password</h3>
 
              <form method="POST" action="/profile/password">
+             @include('partials.errors')
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="old_password">Old Password</label>
