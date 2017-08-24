@@ -180,6 +180,11 @@
   <script src="/js/own-menu.js"></script> 
   <script src="/js/main.js"></script>
 
+  <script>
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    
+    </script>
+
   @yield('js')
 
 </body>

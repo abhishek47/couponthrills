@@ -14,24 +14,72 @@
     </div>
   </section>
   
-
+<section class="top-offer">
 <div class="container">
    @include('flash::message')
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+         <div class="col-md-3">
+             <ul class="nav nav-pills nav-stacked nav-pills-stacked-example"> 
+                 <li role="presentation" class="active"><a href="#">Profile</a></li> 
+                 <li role="presentation"><a href="#">Orders</a></li> 
+                 <li role="presentation"><a href="#">My Coupons</a></li> </ul>
+         </div>
+        <div class="col-md-9">
+
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
+                <div class="panel-heading">
+                    
+                </div>
                 <div class="panel-body">
-                    You are logged in!
-
-                    <button class="btn btn-success" data-toggle="modal" data-target="#buytokens">Buy tokens </button>
+                    <div class="col-md-9">
+                    <h3>{{ auth()->user()->name }}</h3>
+                    <p>{{ auth()->user()->email }}</p>
+                    </div>
+                    <div class="col-md-3"> 
+                    <h4 class="text-center">Tokens : {{ auth()->user()->tokens }}</h4>
+                    <button data-toggle="modal" data-target="#buytokens" class="btn btn-default" style="margin-top: 10px;width: 100%;">Buy Tokens</button>
+                    </div>
                 </div>
             </div>
+
+            <form method="POST" action="/profile">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Fullname" value="{{ auth()->user()->name }}">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" placeholder="Email">
+              </div>
+              <button type="submit" class="btn btn-default">Update Info</button>
+            </form>
+
+            <hr>
+            <h3>Change Password</h3>
+
+             <form method="POST" action="/profile/password">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="old_password">Old Password</label>
+                <input type="password" class="form-control" name="old_password" id="old_password" placeholder="Your Current Password" ">
+              </div>
+
+              <div class="form-group">
+                <label for="password">New Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="New Password">
+              </div>
+
+              <div class="form-group">
+                <label for="password">Confirm New Password</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="New Password">
+              </div>
+              <button type="submit" class="btn btn-default">Update Password</button>
+            </form>
         </div>
     </div>
 </div>
-
+</section>
 
 <div class="modal fade" id="buytokens" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -62,8 +110,7 @@
             <input type="radio"  name="tokens" id="option5" value="1000" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  1000 tokens ( &#8377 2000 )
           </label>
         </div>
-        <br>  <br> 
-        <p>You can <b>buy</b> and use these <b>tokens</b> to play <b>different events</b> of quiz, puzzles as well as online tournaments.Winning these events can multiply your tokens to <b>3x more</b> than you invest.These can also be further <b>redeemed to real cash</b>.</p>
+        <br>  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

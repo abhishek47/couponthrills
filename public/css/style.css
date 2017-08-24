@@ -3255,3 +3255,8 @@ footer .social_icons a {
     background: #e8e8e8;
     color: #777777;   
 }
+
+#buytokens .modal-body .btn{
+background-color: #fff;
+color: #000;
+}

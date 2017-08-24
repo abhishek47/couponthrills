@@ -20,6 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/profile', 'HomeController@update')->name('profile.update');
+Route::post('/profile/password', 'HomeController@updatePassword')->name('profile.password');
+
 Route::get('coupons', 'CouponsController@index');
 Route::get('coupons/{coupon}/redeem', 'CouponsController@redeem');
 
