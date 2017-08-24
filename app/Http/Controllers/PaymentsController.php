@@ -45,14 +45,13 @@ class PaymentsController extends Controller
          
         $payment = $response->payment_request;
         \Auth::user()->payments()->create(['payment_id' => $payment->id, 'amount' => $payment->amount]);
-        flash('Payment was Successfull!')->success();
-        flash("<b>$tokens</b> Tokens were added to your profile!")->success(); 
+        
+        flash("Payment was Successfull!<b>$tokens</b> Tokens were added to your profile!")->success(); 
          
         return redirect('/home');
  
         } else {
-           session()->flash('error_title', 'Payment failed!');
-           session()->flash('error_message', "There was some problem with the payment!Please try again!"); 
+           flash('Payment failed!There was some problem with the payment!Please try again!')->error(); 
          
            return redirect('/home');
         }
