@@ -43,7 +43,9 @@
             </div>
 
             <form method="POST" action="/profile">
-              @include('partials.errors')
+              @if($errors->has('name') || $errors->has('email'))
+                @include('partials.errors')
+              @endif
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="name">Name</label>
@@ -60,7 +62,9 @@
             <h3>Change Password</h3>
 
              <form method="POST" action="/profile/password">
-             @include('partials.errors')
+             @if($errors->has('old_password') || $errors->has('password'))
+              @include('partials.errors')
+             @endif
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="old_password">Old Password</label>
