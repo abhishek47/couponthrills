@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class StoresController extends Controller
@@ -27,7 +29,15 @@ class StoresController extends Controller
      */
     public function index()
     {
-        return view('stores.index');
+        $categories = Category::all();
+
+        $scat = NULL;
+        if(request()->has('cat') && request()->get('cat') != 0)
+        {
+            $scat = Category::find(request()->get('cat'));
+        }
+
+        return view('stores.index', compact('categories', 'scat'));
     }
 
     /**

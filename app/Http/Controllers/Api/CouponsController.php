@@ -12,6 +12,6 @@ class CouponsController extends Controller
     public function all()
     {
     	$coupons = Coupon::all();
-    	return $coupons;
+    	return response($coupons, 200);
     }
 }
