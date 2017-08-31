@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     public function generateToken()
     {
-        if($user->api_token == null) {
+        if($this->api_token == null) {
 
         $token = substr(Password::getRepository()->createNewToken(), 0, 58);
 
