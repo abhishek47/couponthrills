@@ -21,8 +21,10 @@ class CouponsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-    public function redeem(Request $request, Coupon $coupon)
+    public function redeem(Request $request)
     {
+    	$coupon = Coupon::find($request->get('coupon_id'));
+
         if($request->user()->tokens >= $coupon->tokens) {
 
 
