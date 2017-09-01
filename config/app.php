@@ -183,6 +183,8 @@ return [
 
         Backpack\Base\BaseServiceProvider::class,
 
+        Backpack\CRUD\CrudServiceProvider::class,
+
     ],
 
     /*
