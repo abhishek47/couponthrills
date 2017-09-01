@@ -181,6 +181,8 @@ return [
 
         Softon\Indipay\IndipayServiceProvider::class,
 
+        Backpack\Base\BaseServiceProvider::class,
+
     ],
 
     /*

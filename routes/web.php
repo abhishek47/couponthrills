@@ -31,6 +31,7 @@ Route::get('coupons/{coupon}/redeem', 'CouponsController@redeem');
 Route::get('stores', 'StoresController@index');
 
 
+
 Route::post('/buy/tokens', 'PaymentsController@makePayment');
 Route::get('/payments/response', 'PaymentsController@response');
 Route::get('/payments/cancel', 'PaymentsController@cancel');

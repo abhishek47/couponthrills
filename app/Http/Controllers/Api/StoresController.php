@@ -16,7 +16,7 @@ class StoresController extends Controller
 
     public function stores(Request $request)
     {
-    	$category = Category::find(request()->get('cat'));
+    	$category = Category::find(request()->get('category'));
 
     	$stores = $category->stores;
 

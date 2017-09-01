@@ -25,8 +25,12 @@ Route::group(['middleware' => 'auth:api'], function() {
   Route::get('coupons/all', 'Api\CouponsController@all');	
   Route::post('coupons/redeem', 'Api\CouponsController@redeem');
   Route::get('coupons/purchased', 'Api\CouponsController@userCoupons');
-  Route::get('user/tokens', function(){
-  	return $request->user()->tokens;
-  });
+  Route::get('stores/categories', 'Api\StoresController@categories');
+  Route::get('stores', 'Api\StoresController@stores');
+
+  Route::post('tokens/purchase', 'Api\TokensController@purchase');	
+  
+
+
  
 });
