@@ -26,7 +26,11 @@ class StoreCrudController extends CrudController {
 				],
 				[
 				'name' => 'category_id',
-				'label' => "Choose Category"
+				'label' => "Choose Category",
+				 'type' => 'select',
+				   'entity' => 'category', // the method that defines the relationship in your Model
+				   'attribute' => 'name', // foreign key attribute that is shown to user
+				   'model' => "App\Models\Category" // foreign key model
 				]]);
     }
 
