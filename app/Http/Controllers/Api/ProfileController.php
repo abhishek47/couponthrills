@@ -13,6 +13,6 @@ class ProfileController extends Controller
     	$request->user()->email = $request->get('email');
     	$request->user()->save();
 
-    	return response(['success'], 200);
+    	return response($request->user(), 200);
     }
 }
