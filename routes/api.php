@@ -28,7 +28,8 @@ Route::group(['middleware' => 'auth:api'], function() {
   Route::get('stores/categories', 'Api\StoresController@categories');
   Route::get('stores', 'Api\StoresController@stores');
 
-  Route::post('tokens/purchase', 'Api\TokensController@purchase');	
+  Route::post('tokens/purchase', 'Api\TokensController@purchase');
+  Route::post('profile/update', 'Api\ProfileController@update');	
   
 
 
