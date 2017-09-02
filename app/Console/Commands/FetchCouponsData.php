@@ -81,7 +81,7 @@ class FetchCouponsData extends Command
     }
 
 
-    private function get_domain($url)
+    public function get_domain($url)
     {
       $pieces = parse_url($url);
       $domain = isset($pieces['host']) ? $pieces['host'] : '';
