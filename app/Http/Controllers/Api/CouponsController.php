@@ -28,6 +28,16 @@ class CouponsController extends Controller
     public function search(Request $request)
     {
     	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%')->paginate(10);
+
+        foreach ($coupons as $key => $coupon) {
+            if($request->user()->coupons->contains($coupon->id))
+            {
+                $coupon->purchased = 1;
+            } else {
+                $coupon->purchased = 0;
+            }
+        }
+        
     	return response($coupons, 200);
     }
 
