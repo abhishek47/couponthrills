@@ -92,7 +92,7 @@
         <span class="sizer"></span>
         <li class="col-sm-6 text-center">
           <h4>Download our game DualBowling, to win coins!</h4>
-          <a href="#."><img class="img-responsive" src="images/app-icon.png" alt=""></a> <a href="#."><img class="img-responsive" src="/images/app-icon-1.png" alt=""></a> </li>
+          <a href="#."><img class="img-responsive" src="/images/app-icon.png" alt=""></a> <a href="#."><img class="img-responsive" src="/images/app-icon-1.png" alt=""></a> </li>
       </ul>
     </div>
   </section>
