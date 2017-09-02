@@ -14,7 +14,7 @@ class AddLogoPathToCoupons extends Migration
     public function up()
     {
         Schema::table('coupons', function (Blueprint $table) {
-            $table->text('logo_path')->default(null);
+            $table->text('logo_path')->nullable();
         });
     }
 

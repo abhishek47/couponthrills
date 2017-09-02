@@ -57,8 +57,17 @@ class FetchCouponsData extends Command
 
                 if($matches[0][0] >= 50) { $tokens = 20; } 
                 } 
-
-                $logo_path = "https://logo.clearbit.com/" + get_domain($coupon->LINK);
+                
+                 $pieces = parse_url($coupon->LINK);
+                  $domain = isset($pieces['host']) ? $pieces['host'] : '';
+                  if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
+                    $logo_path = "https://logo.clearbit.com/" + $regs['domain'];
+                    
+                  } else {
+                     $logo_path = null;
+                  }
+              
+                
                 
                 Coupon::create([
                         'cid' => $coupon->CM_CID,
@@ -83,11 +92,6 @@ class FetchCouponsData extends Command
 
     public function get_domain($url)
     {
-      $pieces = parse_url($url);
-      $domain = isset($pieces['host']) ? $pieces['host'] : '';
-      if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
-        return $regs['domain'];
-      }
-      return false;
+     
     }
 }
