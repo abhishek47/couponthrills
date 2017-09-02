@@ -20,14 +20,12 @@
   	@include('flash::message')
   </div>
   
-    <section id="portfolio">
+   <!--  <section id="portfolio">
     <div class="portfolio portfolio-filter"> 
       
-      <!--======= PORTFOLIO ITEMS =========-->
       <div class="portfolio-wrapper">
         <div class="container"> 
           
-          <!--======= PORTFOLIO FILTER =========-->
           <ul class="filter">
             <li><a class="active" href="#." data-filter="*">All  offers</a></li>
             <li><a href="#" data-filter=".free">free shipping</a></li>
@@ -49,7 +47,7 @@
          </div>
       </div>
       </div>
-      </section> 
+      </section> -->
 
   <!--======= BANNER =========-->
   <section class="great-deals">
@@ -65,7 +63,9 @@
 	            <div class="coupon-inner">
 	              <div class="top-tag"> <span class="ribn-pur"><span>{{ substr($coupon->store_name, 0, 10) }}</span></span> <span class="star" style="color: green;">{{ $coupon->discount }}</span> </div>
 	              <div class="c-img"> 
-	               <!-- <img class="img-responsive" src="images/c-img-1.jpg" alt="" > -->
+	               <div style="width: 50%; margin: 0 auto;"> 
+	               <img class="img-responsive" style="width: 110px;" src="{{ $coupon->logo_path }}" alt="" > 
+	              </div> 
 	                <a class="head" href="#.">{{ $coupon->title }}</a>
 	                <p>Experies On : {{ $coupon->validity }}</p>
 	                <div class="text-center"> <a  href="" data-toggle="modal" data-target="#buyCoupon-{{$coupon->id}}" class="btn">get coupon code ( <i class="fa fa-certificate"></i> {{ $coupon->tokens }} )</a> </div>

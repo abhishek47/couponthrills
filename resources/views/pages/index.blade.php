@@ -56,7 +56,7 @@
 
     
   <!--======= CLIENTS =========-->
-  <section class="our-best">
+  <section class="our-best hidden-xs">
     <div class="container"> 
       <!--======= TITTLE =========-->
       
@@ -118,8 +118,9 @@
         
         <!--======= COUPON 1 =========-->
         <div class="offer-in"> <!-- <img class="img-responsive" src="/images/t-img-1.jpg" alt="" > -->
-          <h2 style="color: green;">{{ $coupon->store_name }}</h2>
+         
           <div class="offer-top-in">
+            <img class="img-responsive" style="width: 100px;" src="{{ $coupon->logo_path }}">
             <h6>{{ substr($coupon->title, 0, 50)  }}...</h6>
             <p class="text-uppercase">Expires: {{ $coupon->validity }} </p>
             <div class="btm-offer">

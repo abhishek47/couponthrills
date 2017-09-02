@@ -63,6 +63,15 @@ class CouponsController extends Controller
     {
     	$coupons = $request->user()->coupons;
 
+        foreach ($coupons as $key => $coupon) {
+            if($request->user()->coupons->contains($coupon->id))
+            {
+                $coupon->purchased = 1;
+            } else {
+                $coupon->purchased = 0;
+            }
+        }
+
     	return response($coupons, 200);
     }
 
