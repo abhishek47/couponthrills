@@ -11,7 +11,7 @@ class CouponsController extends Controller
 {
     public function all(Request $request)
     {
-    	$coupons = Coupon::all();
+    	$coupons = Coupon::paginate(5);
 
     	foreach ($coupons as $key => $coupon) {
     		if($request->user()->coupons->contains($coupon->id))
