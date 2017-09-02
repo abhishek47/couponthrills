@@ -44,6 +44,7 @@
         <div class="col-sm-6 pull-right screen-img">
           <figure><img src="/images/admin-screen.png" class="center-block"></figure> 
         </div>
+        <br class="visible-xs">
         <div class="col-sm-5 pull-left">
           <div class="service-info-outer center-block">
             <h3 class="info-title" style="color: #000;">
@@ -63,6 +64,7 @@
         <div class="col-sm-6 pull-left  screen-img">
           <figure><img src="/images/admin-screen-2.png" class="center-block"></figure> 
         </div>
+        <br class="visible-xs">
         <div class="col-sm-5 pull-right">
           <div class="service-info-outer center-block">
             <h3 class="info-title" style="color: #000;">
