@@ -21,6 +21,12 @@ class PagesController extends Controller
     	return view('pages.about', compact('page'));
     }
 
+     public function aboutMobile()
+    {
+        $page = 'about';
+        return view('pages.aboutMobile', compact('page'));
+    }
+
     public function contact()
     {
     	$page = 'contact';
