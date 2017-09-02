@@ -42,7 +42,7 @@
     <div class="container">
       <div class="row first-row">
         <div class="col-sm-6 pull-right screen-img">
-          <figure><img src="images/admin-screen.png" class="center-block"></figure> 
+          <figure><img src="/images/admin-screen.png" class="center-block"></figure> 
         </div>
         <div class="col-sm-5 pull-left">
           <div class="service-info-outer center-block">
