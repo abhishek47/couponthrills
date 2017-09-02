@@ -22,7 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  Route::post('logout', 'Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth:api'], function() {
-  Route::get('coupons/all', 'Api\CouponsController@all');	
+  Route::get('coupons/all', 'Api\CouponsController@all');
+  Route::get('coupons/search', 'Api\CouponsController@search');	
   Route::post('coupons/redeem', 'Api\CouponsController@redeem');
   Route::get('coupons/purchased', 'Api\CouponsController@userCoupons');
   Route::get('stores/categories', 'Api\StoresController@categories');

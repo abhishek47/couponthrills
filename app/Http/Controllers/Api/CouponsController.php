@@ -15,6 +15,12 @@ class CouponsController extends Controller
     	return response($coupons, 200);
     }
 
+    public function search()
+    {
+    	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%');
+    	return response($coupons, 200);
+    }
+
 
 	 /**
 	 * Redeem a coupon to user.
