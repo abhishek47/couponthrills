@@ -27,7 +27,7 @@ class CouponsController extends Controller
 
     public function search(Request $request)
     {
-    	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%')->get();
+    	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%')->paginate(5);
     	return response($coupons, 200);
     }
 
