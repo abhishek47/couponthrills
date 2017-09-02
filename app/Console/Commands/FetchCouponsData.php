@@ -59,14 +59,10 @@ class FetchCouponsData extends Command
                 } 
                 
                  $pieces = parse_url($coupon->LINK);
-                  $domain = isset($pieces['host']) ? $pieces['host'] : '';
-                  if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
-                    $logo_path = "https://logo.clearbit.com/" + $regs['domain'];
+                
+                    $logo_path = "https://logo.clearbit.com/" + $pieces['host'];
                     
-                  } else {
-                     $logo_path = '';
-                  }
-              
+                 
                 
                 
                 Coupon::create([
