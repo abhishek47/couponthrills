@@ -11,7 +11,7 @@ class CouponsController extends Controller
 {
     public function all(Request $request)
     {
-    	$coupons = Coupon::paginate(5);
+    	$coupons = Coupon::paginate(10);
 
     	foreach ($coupons as $key => $coupon) {
     		if($request->user()->coupons->contains($coupon->id))
@@ -27,7 +27,7 @@ class CouponsController extends Controller
 
     public function search(Request $request)
     {
-    	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%')->paginate(5);
+    	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%')->paginate(10);
     	return response($coupons, 200);
     }
 
