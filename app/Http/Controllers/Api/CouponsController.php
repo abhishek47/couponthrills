@@ -9,9 +9,19 @@ use App\Http\Controllers\Controller;
 
 class CouponsController extends Controller
 {
-    public function all()
+    public function all(Request $request)
     {
     	$coupons = Coupon::all();
+
+    	foreach ($coupons as $key => $coupon) {
+    		if($request->user()->coupons->contains($coupon->id))
+    		{
+    			$coupon->purchased = 1;
+    		} else {
+    			$coupon->purchased = 0;
+    		}
+    	}
+    	
     	return response($coupons, 200);
     }
 
@@ -20,6 +30,7 @@ class CouponsController extends Controller
     	$coupons = Coupon::where('store_name', 'LIKE', '%' . $request->get('q') . '%')->get();
     	return response($coupons, 200);
     }
+
 
 
 	 /**

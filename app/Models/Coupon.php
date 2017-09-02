@@ -8,5 +8,6 @@ class Coupon extends Model
 {
     protected $guarded = [];
 
+   
     
 }
