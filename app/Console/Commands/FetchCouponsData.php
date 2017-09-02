@@ -90,8 +90,5 @@ class FetchCouponsData extends Command
     }
 
 
-    public function get_domain($url)
-    {
-     
-    }
+   
 }
