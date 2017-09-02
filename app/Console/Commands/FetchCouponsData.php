@@ -64,7 +64,7 @@ class FetchCouponsData extends Command
                     $logo_path = "https://logo.clearbit.com/" + $regs['domain'];
                     
                   } else {
-                     $logo_path = null;
+                     $logo_path = '';
                   }
               
                 
