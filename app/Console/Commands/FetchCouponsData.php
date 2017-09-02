@@ -71,7 +71,7 @@ class FetchCouponsData extends Command
                         'discount' => $coupon->DISCOUNT,
                         'tokens' => $tokens,
                         'categories' => $coupon->CATS_TEXT,
-                        'store_name' => $coupon->STORE_NAME
+                        'store_name' => $coupon->STORE_NAME,
                         'logo_path' => $logo_path
                     ]);
            }
