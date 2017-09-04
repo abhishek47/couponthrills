@@ -22,7 +22,7 @@ class TokensController extends Controller
 
     	if(isset($game)) {
 	    
-	    	 $user = User::where('email', $request->user('email'))->first();
+	    	 $user = User::where('email', $request->get('email'))->first();
 
 	    	 if(!$user) {
 	    
