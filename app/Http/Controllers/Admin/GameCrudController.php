@@ -13,7 +13,7 @@ class GameCrudController extends CrudController {
         $this->crud->setRoute("admin/games");
         $this->crud->setEntityNameStrings('game', 'games');
 
-        $this->crud->setColumns(['id', 'name', 'website']);
+        $this->crud->setColumns(['id', 'name', 'access_token']);
         $this->crud->addFields([[
         	    'name' => 'name',
 				'label' => "Name of Game"
@@ -27,8 +27,10 @@ class GameCrudController extends CrudController {
     }
 
 	public function store(StoreRequest $request)
-	{
-		return parent::storeCrud();
+	{   
+        $at = uniqid();
+        $req = request()->merge(['access_token' => $at]);
+		return parent::storeCrud($req);
 	}
 
 	public function update(UpdateRequest $request)
