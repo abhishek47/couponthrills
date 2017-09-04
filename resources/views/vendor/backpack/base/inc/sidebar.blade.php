@@ -26,7 +26,8 @@
            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/stores') }}"><i class="fa fa-files-o"></i> <span>Stores</span></a></li>
            
            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/categories') }}"><i class="fa fa-dashboard"></i> <span>Store Categories</span></a></li>
-
+           
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/games') }}"><i class="fa fa-files-o"></i> <span>Connected Games</span></a></li>
 
 
           <!-- ======================================= -->
