@@ -12,8 +12,8 @@
 <meta name="author" content="Trumpets">
 
 <!-- FONTS ONLINE -->
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 
 <!--MAIN STYLE-->
 <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
