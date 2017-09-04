@@ -39,7 +39,7 @@ class TokensController extends Controller
     	
     	 } else {
     	
-    	 	return response(['error' => 'unauthorised', 401]);
+    	 	return response(['error' => 'unauthorised'], 401);
     	
     	 }
 
