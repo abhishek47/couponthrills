@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  Route::post('logout', 'Auth\LoginController@logout');
 
  Route::post('tokens/transfer', 'Api\TokensController@transfer');
+ Route::post('user/check', 'Api\ProfileController@exists');
 
 Route::group(['middleware' => 'auth:api'], function() {
   Route::get('coupons/all', 'Api\CouponsController@all');
