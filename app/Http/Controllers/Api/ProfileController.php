@@ -21,17 +21,26 @@ class ProfileController extends Controller
 
     public function exists(Request $request)
     {
-    	  //$this->validateLogin($request);
+    	 $game = Game::where('access_token', $request->get('access_token'))->first();
+
+    	if(isset($game)) {
 
 	     if ($this->attemptLogin($request)) {
 	        
-	            return response(['success'], 200);
+	            return response(['status' => 'success'], 200);
 
 	     } else {
 
-	     		return response(['failed'], 400); 	
+	     		return response(['status' => 'failed'], 400); 	
 
 
 	      }
+
+	  } else {
+
+
+	  	  return response(['error' => 'unauthorised'], 401);
+
+	  }
     }
 }
