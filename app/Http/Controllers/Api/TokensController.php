@@ -14,6 +14,8 @@ class TokensController extends Controller
     	 $tokens = $request->get('tokens'); 
     	 $request->user()->tokens += $tokens;
          $request->user()->save();
+
+         return response(['success'], 200);
     }
 
     public function transfer(Request $request)
