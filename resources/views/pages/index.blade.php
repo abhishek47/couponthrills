@@ -110,7 +110,7 @@
                   <div class="cate-over">
                     <div class="after-over animated flipInY">
                       <p>General Knowledge</p>
-                      <a href="#.">PLAY NOW</a> </div>
+                      <a href="/quiz">PLAY NOW</a> </div>
                   </div>
                   <!--======= TITTLE =========-->
                   <div class="cate-tittle"> Quizzes &amp; Puzzles </div>

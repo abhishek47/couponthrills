@@ -60,6 +60,22 @@
                   </label>
                 </div>
               </li>
+
+              <li class="col-md-6">
+                <div class="form-group">
+                  <label for="">Referrer Code
+                    <input type="text" name="referal_code" class="form-control" id="referal_code" placeholder="REFBY23">
+                  </label>
+                </div>
+              </li>
+
+              <li class="col-md-6">
+                <div class="form-group">
+                    <input type="hidden" name="" class="form-control" id="" placeholder="REFBY23">
+                 
+                </div>
+              </li>
+
               <li class="col-md-6">
                 <button type="submit" class="btn">create an account</button>
               </li>

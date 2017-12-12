@@ -15,12 +15,13 @@
     </div>
   </section>
 
-
+<div style="min-height: 800px;">
  <!-- start case-studies -->
         <section class="case-studies section-padding">
             <div class="container">        
+              <br><br>
 
-               <div class="row">
+              <!-- <div class="row">
                       <div class="col col-xs-12">
                         
                            
@@ -50,8 +51,8 @@
                      </div>
 
                  
-                </div>
-                <div class="row case-studies-grid">
+                </div> -->
+                <div class="row quizzes-grid">
 
 
                   @foreach($quizzes as $key => $quiz)
@@ -73,6 +74,6 @@
             </div> <!-- end container -->
         </section>
         <!-- end case-studies -->
-
+</div>
 
 @endsection

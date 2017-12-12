@@ -63,11 +63,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        if(array_key_exists('referal_code', $data))
+        {
+            $id = substr($data['referal_code'], 5);
+
+            $referer = User::findOrFail($id);
+
+            $referer->tokens += 50;
+
+            $referer->save(); 
+        }
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        if(array_key_exists('referal_code', $data))
+        {
+            $user->tokens += 50;
+
+            $user->save(); 
+        }
+
+        return $user;
     }
 
 

@@ -102,7 +102,7 @@ playGame.prototype = {
          },
          function(data, status){
 
-               swal("Woohoo!!", slicePrizes[prize] + " tokens are added to your account!", "success");
+               swal("Woohoo!!", slicePrizes[prize] + " are added to your account!", "success");
              
          });
           }
