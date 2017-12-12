@@ -6,6 +6,8 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+
 <title>{{ config('app.name', 'Laravel') }}</title>
 <meta name="keywords" content="HTML5,CSS3,HTML,Template,Multi-Purpose,M_Adnan,Corporate Theme,Comre -   Coupon &amp; Offers Template" >
 <meta name="description" content="Coupon &amp; Offers Website">
@@ -100,8 +102,9 @@
           <li class="{{ isset($page) ? ($page == 'home' ? 'active' : '') : '' }}"><a href="/">Home</a></li>
           <li class="{{ isset($page) ? ($page == 'coupons' ? 'active' : '') : '' }}"><a href="/coupons">Deals</a></li>
           <li class="{{ isset($page) ? ($page == 'stores' ? 'active' : '') : '' }}"><a href="/stores">Stores</a></li>
-          <li class="{{ isset($page) ? ($page == 'about' ? 'active' : '') : '' }}"><a href="/about">About us</a></li>
-          <li class="{{ isset($page) ? ($page == 'contact' ? 'active' : '') : '' }}"><a href="/contact">Contact</a></li>
+        <!--  <li class="{{ isset($page) ? ($page == 'earn' ? 'active' : '') : '' }}"><a href="/earn">Earn</a></li> -->
+         <!-- <li class="{{ isset($page) ? ($page == 'about' ? 'active' : '') : '' }}"><a href="/about">About us</a></li> -->
+          <li class="{{ isset($page) ? ($page == 'contact' ? 'active' : '') : '' }}"><a href="/contact">Support</a></li>
         </ul>
 
       <!--======= SUBMIT COUPON =========-->
@@ -131,17 +134,16 @@
           <h6>quick link</h6>
           <div class="row links">
             <ul class="col-xs-4">
-              <li><a href="#.">Home</a> </li>
-              <li><a href="#.">stores</a> </li>
-              <li><a href="#.">contact </a> </li>
-              <li><a href="#.">careers</a> </li>
-              <li><a href="#.">blog</a> </li>
+              <li><a href="/">Home</a> </li>
+              <li><a href="/deals">deals</a> </li>
+              <li><a href="/stores">stores</a> </li>
+              <li><a href="/earn">earn</a> </li>
+              <li><a href="/contact">contact </a> </li>
+              
             </ul>
             <ul class="col-xs-8">
               <li><a href="#.">Sitemap</a> </li>
-              <li><a href="#.">Press</a> </li>
-              <li><a href="#.">Privacy Policy & Opt Out</a> </li>
-              <li><a href="#.">List your business on CD</a> </li>
+              <li><a href="#.">Privacy Policy</a> </li>
               <li><a href="#.">Terms of Service</a> </li>
             </ul>
           </div>
@@ -170,6 +172,15 @@
 
 
   <script src="/js/jquery-1.11.0.min.js"></script> 
+
+  <script type="text/javascript">
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+</script>
+
   <script src="/js/wow.min.js"></script> 
   <script src="/js/bootstrap.min.js"></script> 
   <script src="/js/jquery.stellar.js"></script> 
@@ -179,6 +190,8 @@
   <script src="/js/jquery.sticky.js"></script> 
   <script src="/js/own-menu.js"></script> 
   <script src="/js/main.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   
 
   <script>
     $('div.alert').not('.alert-important').delay(3000).fadeOut(350);

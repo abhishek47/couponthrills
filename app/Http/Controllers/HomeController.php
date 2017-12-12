@@ -59,6 +59,13 @@ class HomeController extends Controller
         return back();
     }
 
+    public function earn()
+    {
+      $page = 'earn';
+      return view('pages.earn', compact('page'));
+    }
+
+
 
     public function updatePassword(Request $request)
    {

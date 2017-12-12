@@ -3260,3 +3260,56 @@ footer .social_icons a {
 background-color: #fff;
 color: #000;
 }
+
+
+
+span.red {
+			color: red;
+			font-weight: 700;
+		}
+		span.blue {
+			color: blue;
+			font-weight: 700;
+		}
+		span.pink {
+			color: pink;
+		}
+		.button {
+			width: 90px;
+			height: 29px;
+			border-radius: 5px;
+			padding: 5px;
+			margin: 0 auto;
+			cursor: pointer;
+			text-align: center;
+			background-color: pink;
+			font-size: 13px;
+			color: #fff;
+		}
+		.tic-tac-toe {
+			width: 500px;
+			height: auto;
+		}
+		.tile {
+			height: 140px;
+			width: 140px;
+			display: inline-block;
+			cursor: pointer;
+			position: relative;
+			vertical-align: top;
+			padding: 15px;
+			margin-bottom: 5px;
+			box-sizing: border-box;
+			color: #fff;
+			font-size: 60px;
+			text-align: center;
+		}
+		.free {
+			background-color: #999;
+		}
+		.O-play {
+			background-color: blue;
+		}
+		.X-play {
+			background-color: red;
+		}

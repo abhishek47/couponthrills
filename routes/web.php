@@ -32,7 +32,24 @@ Route::get('coupons/{coupon}/redeem', 'CouponsController@redeem');
 Route::get('stores', 'StoresController@index');
 
 
+Route::get('earn', 'HomeController@earn');
+
 
 Route::post('/buy/tokens', 'PaymentsController@makePayment');
 Route::get('/payments/response', 'PaymentsController@response');
 Route::get('/payments/cancel', 'PaymentsController@cancel');
+
+Route::post('/tokens/add', 'TokensController@store');
+
+
+// Games
+
+Route::get('/games/tic-tac-toe', 'TicTacController@index');
+Route::get('/games/spinner', 'SpinnerController@index');
+
+Route::get('/js/wheel', 'SpinnerController@index');
+
+
+
+Route::post('/refer', 'ReferalsController@store');
+
