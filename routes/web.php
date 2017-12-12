@@ -53,3 +53,9 @@ Route::get('/js/wheel', 'SpinnerController@index');
 
 Route::post('/refer', 'ReferalsController@store');
 
+
+
+Route::get('/quiz', 'QuizzesController@index');
+Route::get('/quiz/random', 'QuizzesController@random');
+Route::get('/quiz/{quiz}', 'QuizzesController@show');
+

@@ -59,4 +59,16 @@ class User extends Authenticatable
        }
         
     }
+
+
+    public function solvedQuizzes()
+    {
+        return $this->belongsToMany(Quiz::class)->withPivot('answers', 'points');
+    }
+
+    public function hasSolvedQuiz(Quiz $quiz)
+    {
+
+        return $this->solvedQuizzes->contains($quiz);
+    }
 }
