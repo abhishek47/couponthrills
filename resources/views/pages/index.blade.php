@@ -280,13 +280,18 @@
   <section class="app-com">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 text-center"> <img class="img-responsive" src="images/iphone.png" alt=""> </div>
+        <!-- <div class="col-sm-6 text-center"> <img class="img-responsive" src="images/app.jpg" alt=""> </div> -->
         <div class="col-sm-6">
           <div class="text-sec">
-            <h3>CouponThrills on app, too!</h3>
+            <h3 style="font-size: 32px;">Comming Soon!</h3>
             <p>Save the most every time! get deal notifications with our popular Browser App and save on the go with our awesome Mobile App! it’s Available on the App store
               and Google Play. Use it Everywhere!</p>
-           <a href="#."><img src="images/app-icon-1.png" alt=""></a> <a href="#."><img src="images/app-icon-2.png" alt=""></a> </div>
+           <a href="#."><img src="images/app-icon-1.png" alt=""></a> <a href="#."><img src="images/app-icon.png" alt=""></a> </div>
+
+           <br>
+
+           <br>
+           <br>
         </div>
       </div>
     </div>

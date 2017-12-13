@@ -126,8 +126,8 @@
           <h6>about couponthrills</h6>
           <p>Hello we are CouponThrills. We are here to provide you the best offers through our coupons. Hello we are 
             CouponThrills. We are here to provide you coupons.</p>
-          <p>Nashik, Maharashtra, India</p>
-          <p>contact@stallionstudio.in</p>
+          <p>India</p>
+          <p>couponthrills@gmail.com</p>
           <p>http://stallionstudio.in</p>
         </li>
         <li class="col-sm-4">
@@ -135,14 +135,13 @@
           <div class="row links">
             <ul class="col-xs-4">
               <li><a href="/">Home</a> </li>
-              <li><a href="/deals">deals</a> </li>
+              <li><a href="/coupons">deals</a> </li>
               <li><a href="/stores">stores</a> </li>
               <li><a href="/earn">earn</a> </li>
-              <li><a href="/contact">contact </a> </li>
+              <li><a href="/contact">support </a> </li>
               
             </ul>
             <ul class="col-xs-8">
-              <li><a href="#.">Sitemap</a> </li>
               <li><a href="#.">Privacy Policy</a> </li>
               <li><a href="#.">Terms of Service</a> </li>
             </ul>
