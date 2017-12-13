@@ -59,3 +59,10 @@ Route::get('/quiz', 'QuizzesController@index');
 Route::get('/quiz/random', 'QuizzesController@random');
 Route::get('/quiz/{quiz}', 'QuizzesController@show');
 
+
+
+Route::post('/offer/use', 'OfferController@store');
+
+
+
+

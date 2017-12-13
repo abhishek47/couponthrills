@@ -35,22 +35,17 @@
               
               <!--======= ADDRESS =========-->
               <li> <i class="fa fa-map-marker"></i>
-                <h6>Address</h6>
-                <p>Nashik, Maharashtra, India</p>
+                <h6>Situated In</h6>
+                <p>India</p>
               </li>
               
               <!--======= EMAIL =========-->
               <li> <i class="fa fa-envelope"></i>
                 <h6>email</h6>
-                <p>contact@stallionstudio.in</p>
+                <p>couponthrills@gmail.com</p>
               </li>
               
-              <!--======= ADDRESS =========-->
-              <li> <i class="fa fa-phone"></i>
-                <h6>our phone</h6>
-                <p>CouponThrills - Stallion Studios,
-                India</p>
-              </li>
+             
             </ul>
             
             <!--======= SOCIAL ICON =========-->

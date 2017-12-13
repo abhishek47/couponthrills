@@ -19,7 +19,8 @@
 
   @if(auth()->check())
 <section class="" style="padding-top: 30px;">
-    <div class="container"> 
+    <div class="container">
+      @include('flash::message') 
      <div class="panel panel-default">
                 <div class="panel-heading">
                     
@@ -32,6 +33,8 @@
                     <div class="col-md-3"> 
                     <h4 class="text-center">Tokens : {{ auth()->user()->tokens }}</h4>
                     <button data-toggle="modal" data-target="#buytokens" class="btn btn-default" style="margin-top: 10px;width: 100%;">Buy Tokens</button>
+
+                    <button data-toggle="modal" data-target="#offercode" class="btn btn-default" style="margin-top: 10px;width: 100%;">Use Offer Code</button>
                     </div>
                 </div>
             </div>
@@ -273,7 +276,7 @@
 
  
   
-  <!--======= APP =========
+  <!--======= APP =========-->
   <section class="app-com">
     <div class="container">
       <div class="row">
@@ -283,12 +286,12 @@
             <h3>CouponThrills on app, too!</h3>
             <p>Save the most every time! get deal notifications with our popular Browser App and save on the go with our awesome Mobile App! it’s Available on the App store
               and Google Play. Use it Everywhere!</p>
-           <a href="#."><img src="images/app-icon-1.png" alt=""></a> </div>
+           <a href="#."><img src="images/app-icon-1.png" alt=""></a> <a href="#."><img src="images/app-icon-2.png" alt=""></a> </div>
         </div>
       </div>
     </div>
   </section>
-  -->
+  
   
 
 @if(request()->session()->has('coupon_redeemed'))
@@ -371,19 +374,19 @@
         <br><br> 
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-default active rbtn">
-            <input type="radio"  name="tokens" id="option1" value="50" autocomplete="off" checked><i class="fa fa-money" style="color: green;"></i> 50 tokens ( &#8377 100 )
+            <input type="radio"  name="tokens" id="option1" value="65" autocomplete="off" checked><i class="fa fa-money" style="color: green;"></i> 100 tokens ( $ 1 )
           </label>
           <label class="btn btn-default rbtn">
-            <input type="radio"  name="tokens" id="option2" value="100" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  100 tokens ( &#8377 200 )
+            <input type="radio"  name="tokens" id="option2" value="130" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  200 tokens ($ 2 )
           </label>
           <label class="btn btn-default rbtn">
-            <input type="radio" name="tokens" id="option3" value="300" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  300 tokens ( &#8377 600 )
+            <input type="radio" name="tokens" id="option3" value="325" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  600 tokens ($ 5 )
           </label>
           <label class="btn btn-default rbtn">
-            <input type="radio"  name="tokens" id="option4" value="500" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  500 tokens ( &#8377 1000 )
+            <input type="radio"  name="tokens" id="option4" value="650" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  1200 tokens ( $ 10 )
           </label>
           <label class="btn btn-default rbtn">
-            <input type="radio"  name="tokens" id="option5" value="1000" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  1000 tokens ( &#8377 2000 )
+            <input type="radio"  name="tokens" id="option5" value="1300" autocomplete="off"><i class="fa fa-money" style="color: green;"></i>  2500 tokens ( $ 20 )
           </label>
         </div>
         <br>  
@@ -421,6 +424,33 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn" style="background:#002b5e;">Send Invite</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="offercode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Use Offer Code</h4>
+        <form method="post" action="/offer/use">
+      </div>
+      <div class="modal-body">
+        {{ csrf_field() }}
+        <b>Enter Offer Code</b>
+
+        <br><br> 
+        <div class="form-group">
+          <input type="text" name="code" class="form-control" placeholder="TRUMP123">
+        </div>
+
+          
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn" style="background:#002b5e;">USE OFFER</button>
         </form>
       </div>
     </div>

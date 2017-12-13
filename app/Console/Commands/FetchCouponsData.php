@@ -51,11 +51,11 @@ class FetchCouponsData extends Command
                 $tokens = 5; 
                 
                 if(isset($matches[0][0])) { 
-                if($matches[0][0] <= 20) { $tokens = 10; }
+                if($matches[0][0] <= 20) { $tokens = 100; }
 
-                if($matches[0][0] < 50 && $matches[0][0] > 20) { $tokens = 15; }
+                if($matches[0][0] < 50 && $matches[0][0] > 20) { $tokens = 150; }
 
-                if($matches[0][0] >= 50) { $tokens = 20; } 
+                if($matches[0][0] >= 50) { $tokens = 200; } 
                 } 
                 
                  $pieces = parse_url($coupon->LINK);
