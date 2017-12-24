@@ -105,6 +105,10 @@
         <!--  <li class="{{ isset($page) ? ($page == 'earn' ? 'active' : '') : '' }}"><a href="/earn">Earn</a></li> -->
          <!-- <li class="{{ isset($page) ? ($page == 'about' ? 'active' : '') : '' }}"><a href="/about">About us</a></li> -->
           <li class="{{ isset($page) ? ($page == 'contact' ? 'active' : '') : '' }}"><a href="/contact">Support</a></li>
+
+          @if(auth()->check())
+           <li class="{{ isset($page) ? ($page == 'dashboard' ? 'active' : '') : '' }}"><a href="/home">My Account</a></li>
+          @endif
         </ul>
 
       <!--======= SUBMIT COUPON =========-->
