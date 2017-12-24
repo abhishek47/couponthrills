@@ -42,7 +42,7 @@ class FetchCouponsData extends Command
         $json = file_get_contents("https://www.coupomated.com/apiv3/6c2a-d0b8-bbaf-b9e6/getAllCoupons/json");
         $data = json_decode($json);
 
-        dd($data);
+       
 
         $coupons = $data;
 
