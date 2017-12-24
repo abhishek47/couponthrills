@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'tokens' => 200
         ]);
 
         if(array_key_exists('referal_code', $data) && $data['referal_code'] != '')
