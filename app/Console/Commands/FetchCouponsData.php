@@ -39,12 +39,12 @@ class FetchCouponsData extends Command
      */
     public function handle()
     {
-        $json = file_get_contents("https://www.coupomated.com/apiv2/data/808afeca5c.php?key=6c2a-d0b8-bbaf-b9e6&format=json");
+        $json = file_get_contents("https://www.coupomated.com/apiv3/6c2a-d0b8-bbaf-b9e6/getAllCoupons/json");
         $data = json_decode($json);
 
         dd($data);
 
-        $coupons = $data->DATAFEED->COUPON_ITEM;
+        $coupons = $data;
 
 
         
