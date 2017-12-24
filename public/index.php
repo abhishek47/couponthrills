@@ -21,6 +21,8 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
+ini_set("allow_url_fopen", 1);
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights

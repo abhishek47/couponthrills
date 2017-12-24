@@ -39,9 +39,14 @@ class FetchCouponsData extends Command
      */
     public function handle()
     {
-        $json = \File::get("database/coupons.json");
+        $json = file_get_contents("https://www.coupomated.com/apiv3/6c2a-d0b8-bbaf-b9e6/getAllCoupons/json");
         $data = json_decode($json);
+
+        dd($data);
+
         $coupons = $data->DATAFEED->COUPON_ITEM;
+
+
         
         foreach($coupons as $coupon)
         {

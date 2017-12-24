@@ -33,7 +33,7 @@
               <li class="col-md-6">
                 <div class="form-group">
                   <label for="">Full Name *
-                    <input type="text" name="name" class="form-control" id="name" placeholder="">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="" required="">
                   </label>
                 </div>
               </li>
@@ -41,22 +41,22 @@
               <li class="col-md-6">
                 <div class="form-group">
                   <label for="">E-mail Address *
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="" required="">
                   </label>
                 </div>
               </li>
               <li class="col-md-6">
                 <div class="form-group">
-                  <label for="">Password
-                    <input type="password" name="password" class="form-control" id="password" placeholder="">
+                  <label for="">Password *
+                    <input type="password" name="password" class="form-control" id="password" placeholder="" required="">
                   </label>
                 </div>
               </li>
 
               <li class="col-md-6">
                 <div class="form-group">
-                  <label for="">Confirm Password
-                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="">
+                  <label for="">Confirm Password *
+                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="" required="">
                   </label>
                 </div>
               </li>
