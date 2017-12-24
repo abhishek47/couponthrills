@@ -24,62 +24,33 @@
           <h3>Best Shopping Destinations</h3>
         
        
-        <form class="finde">
-          <select name="cat">
-             <option value="0">All</option>
-            @foreach($categories as $cat)
-             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-            @endforeach 
-          </select>
-          <button type="submit">Filter</button>
-        </div>
-      </form>
+       <br><br><br>
       
-      @if(isset($scat))
-        
-          <h3>{{ $scat->name }}</h3>
-          <ul class="row">
-            @foreach($scat->stores->chunk(1) as $storesSet)
-            <li class="col-sm-4">
-              <ul class="link-letter">
-                @foreach($storesSet as $store)
-                 <li style="margin-top: 15px;">
-                    <div style="width: 90px;margin:0 auto;">
-                      <img src="{{ $store->logo_path }}" style="width: 90px;">
-                    </div>
-                     <a target="_blank" href="{{ $store->link }}" style="text-align: center;font-size: 18px;"> {{ $store->name }}</a>
-                 </li>
-                @endforeach
-              </ul>
-            </li>
-            @endforeach
-          </ul>
-        </div>
-
-      @else 
-        @foreach($categories as $cat)
+   
+        @foreach($categories as $cat => $stores)
         
         <div class="letters">
-          <h3>{{ $cat->name }}</h3>
-          <ul class="row">
-            @foreach($cat->stores->chunk(1) as $storesSet)
-            <li class="col-sm-4">
-              <ul class="link-letter">
-                @foreach($storesSet as $store)
-                 <li style="margin-top: 15px;">
-                    <div style="width: 90px;margin:0 auto;">
-                      <img src="{{ $store->logo_path }}" style="width: 90px;">
-                    </div>
-                     <a target="_blank" href="{{ $store->link }}" style="text-align: center;font-size: 18px;"> {{ $store->name }}</a>
-                 </li>
-                @endforeach
-              </ul>
-            </li>
+          <h3>{{ $cat }}</h3>
+       
+            @foreach(array_chunk($stores, 3) as $storesSet)
+             <div class="row">
+               @foreach($storesSet as $store)
+                     <div class="col-sm-4">
+                     <li style="margin-top: 15px;margin: 35px;">
+                        <div style="width: 90px;margin:0 auto;">
+                          <img src="{{ $store->STORE_LOGOV2 }}" style="width: 90px;">
+                        </div>
+                         <a target="_blank" href="{{ $store->STORE_LINK }}" style="text-align: center;font-size: 18px;"> {{ $store->STORE_NAME }}</a>
+                     </li>
+                     </div>
+                    @endforeach
+              </div>
+           
             @endforeach
-          </ul>
+          
         </div>
         @endforeach
-      @endif 
+      
   </section> 
 
   

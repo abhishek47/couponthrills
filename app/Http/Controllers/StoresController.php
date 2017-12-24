@@ -37,7 +37,26 @@ class StoresController extends Controller
             $scat = Category::find(request()->get('cat'));
         }
 
-        return view('stores.index', compact('categories', 'scat'));
+        $data = file_get_contents('https://www.coupomated.com/apiv3/6c2a-d0b8-bbaf-b9e6/getStores/Y/json');
+
+        $stores = json_decode($data);
+
+        $sorted = array();
+
+        foreach ($stores as $store) {
+            $groupid = $store->STORE_CAT;
+            if (isset($sorted[$groupid])) {
+                $sorted[$groupid][] = $store;
+            } else {
+                $sorted[$groupid] = array($store);
+            }
+        }
+
+        $categories = $sorted;
+
+
+
+        return view('stores.index', compact('categories'));
     }
 
     /**

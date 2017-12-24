@@ -23,6 +23,14 @@ require __DIR__.'/../bootstrap/autoload.php';
 
 ini_set("allow_url_fopen", 1);
 
+function _group_by($array, $key) {
+    $return = array();
+    foreach($array as $val) {
+        $return[$val[$key]][] = $val;
+    }
+    return $return;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
