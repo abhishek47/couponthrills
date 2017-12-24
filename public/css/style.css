@@ -1886,7 +1886,6 @@ input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focu
 }
 .stores .finde {
 	float: right;
-	width: 150px;
 	margin-top: -30px;
 }
 .stores .finde button {
