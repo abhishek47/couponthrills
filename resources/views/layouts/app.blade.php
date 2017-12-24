@@ -129,7 +129,7 @@
         <li class="col-sm-4">
           <h6>about couponthrills</h6>
           <p>Hello we are CouponThrills. We are here to provide you the best offers through our coupons. Hello we are 
-            CouponThrills. We are here to provide you coupons.</p>
+            CouponThrills.</p>
           <p>India</p>
           <p>couponthrills@gmail.com</p>
           <p>http://stallionstudio.in</p>
