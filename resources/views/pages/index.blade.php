@@ -406,6 +406,7 @@
 </div>
 
 
+@if(auth()->check())
 <div class="modal fade" id="referFriend" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -434,6 +435,7 @@
     </div>
   </div>
 </div>
+@endif
 
 <div class="modal fade" id="offercode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
