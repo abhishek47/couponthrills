@@ -107,7 +107,7 @@
           <li class="{{ isset($page) ? ($page == 'contact' ? 'active' : '') : '' }}"><a href="/contact">Support</a></li>
 
           @if(auth()->check())
-           <li class="{{ isset($page) ? ($page == 'dashboard' ? 'active' : '') : '' }}"><a href="/home">My Account</a></li>
+           <li class="{{ isset($page) ? ($page == 'profile' ? 'active' : '') : '' }}"><a href="/home">My Account</a></li>
           @endif
         </ul>
 
