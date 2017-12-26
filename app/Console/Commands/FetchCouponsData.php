@@ -48,7 +48,7 @@ class FetchCouponsData extends Command
   
         foreach($coupons as $coupon)
         {
-            if(!Coupon::where('cid', $coupon->CM_CID)->exists()) {
+            if(!Coupon::where('cid', $coupon->CM_CID)->exists() && Carbon::parse($coupon->VALIDITY_DATE)->gt(Carbon::now())) {
                 preg_match_all('!\d+!', $coupon->DISCOUNT, $matches);
                 
                 $tokens = 5; 
